@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Gipalti",
+  "version": "1.0",
+  "description": "Read payerToken from Tipalti Hub",
+  "permissions": ["cookies"],
+  "host_permissions": [
+    "https://hub.tipalti.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+        "matches": ["https://hub.tipalti.com/*"],
+        "js": ["content.js"],
+        "css": ["content.css"]
+    }
+  ]
+}

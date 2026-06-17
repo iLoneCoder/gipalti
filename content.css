@@ -1,0 +1,24 @@
+.gipalti-id_container {
+    display: flex;
+    align-items: center;
+}
+
+.gipalti-copy_button {
+    transition: background-color 0.2s, color, border-color ease-in-out;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gipalti-copy_button:hover {
+    background-color: #80808024;
+    border: none;
+}
