@@ -1,4 +1,12 @@
-.gipalti-id_container {
+.gipalti-extension_container {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    gap: 4px;
+}
+
+.gipalti-id_container,
+.gipalti-access_token_container {
     display: flex;
     align-items: center;
 }
