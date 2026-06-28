@@ -34,5 +34,22 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
         // Return true to indicate you wish to send a response asynchronously
         return true;
+    } else if (request.action === 'open_ep_request') {
+      console.log("open_ep_request action received in background.js");
+        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+          const url = tabs[0].url;
+          const currnetId = tabs[0].id;
+          const splitUrl = url.split('dashboard/purchase-request/request/');
+          const idOfEpRequest = splitUrl.length > 1 ? splitUrl[1] : "";
+
+          if (!!idOfEpRequest) {
+            const newUrl = `https://hub.tipalti.com/dashboard/purchase-request/request/${idOfEpRequest}`;
+
+            chrome.tabs.update(currnetId, { url: `${splitUrl[0]}dashboard/procurement/purchases`});
+            chrome.tabs.create({ url: newUrl, active: true })
+          }
+
+          console.log("Current tab URL:", url);
+        })
     }
 })

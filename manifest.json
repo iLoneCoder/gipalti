@@ -3,7 +3,7 @@
   "name": "Gipalti",
   "version": "1.0",
   "description": "Read payerToken from Tipalti Hub",
-  "permissions": ["cookies"],
+  "permissions": ["cookies", "tabs"],
   "host_permissions": [
     "https://hub.tipalti.com/*"
   ],
@@ -15,6 +15,10 @@
         "matches": ["https://hub.tipalti.com/*"],
         "js": ["content.js"],
         "css": ["content.css"]
+    },
+    {
+      "matches": ["https://*.approve.com/dashboard/purchase-request/request/*"],
+      "js": ["ep.js"]
     }
   ]
 }
